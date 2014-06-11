@@ -17,25 +17,52 @@
     </head>
     <body>
 
-  <section id="main">
-    <header data-title="groupbar"></header>
+        <section id="main">
+            <!--<header data-title="groupbar"></header>-->
 
-    <nav data-control="groupbar">
-        <a href="#" data-view-article="article_1" class="active">Art-1</a>
-        <a href="#" data-view-article="article_2">Art-2</a>
-    </nav>
+            <nav data-control="groupbar">
+                <a href="#" data-view-article="article_1" class="active">Consola</a>
+                <a href="#" data-view-article="article_2">About</a>
+                <a href="#" data-view-article="article_3">Joystick</a>
+            </nav>
 
-    <article id="article_1" class="active">{{CONTENT}}</article>
-    <article id="article_2">{{OTHER_CONTENT}}</article>
-</section>
+            <article id="article_1" class="active">
+                <div id="connn">
+                    <div id="connection">
+
+                        <div class="dispositivo">
+                            Dispositivo: <br/>
+                            <select id="deviceList">
+                                <option>Buscando...</option>
+                            </select>    
+                        </div>
+
+                        <div class="estado">
+                            <a class="topcoat-button--large is-disabled" id="connectButton">Conectar</a>
+                            <a class="topcoat-button--large" id="listButton">Listar Dispositivos</a>
+                        </div>
+                    </div>
+
+                    <div id="chat">
+                        <form id="chatform">
+                            <textarea id="messages" readonly></textarea>                    
+                            <input type="text" class="topcoat-text-input" id="message" placeholder="Mensage" />
+                            <a class="topcoat-button--cta" id="sendButton">Enviar</a>
+                            <a class="topcoat-button" id="disconnectButton">Desconectar</a>                
+                        </form>
+                    </div>
+                </div>
+            </article>
+
+            <article id="article_2">
+                <p>Abaout</p>
+            </article>
+            <article id="article_3">
+                <p>Joystick</p>
+            </article>
+        </section>
 
 
-    </section>
-
-    <section id="second">
-        <header data-back="home" data-title="example"></header>
-        <article id="second_1">{{CONTENT}}</article>
-    </section>
 
 
         <script src="js/quo.js"></script>
