@@ -60,9 +60,21 @@
                 <p>Abaout</p>
             </article>
             <article id="article_3">
-                <p>Joystick</p>
+                <input type="text" id="direction" readonly>
+                <div id='controller' class="joydiv-controller">
+                    <div class="joydiv-up"></div>
+                    <div class="joydiv-left"></div>
+                    <div class="joydiv-right"></div>
+                    <div class="joydiv-down"></div>
+                    <div class="joydiv-trackpad">
+                        <div class="joydiv-tracker"></div>
+                    </div>
+                </div>   
             </article>
         </section>
+            <footer>
+                <div id="statusMessage"></div>
+            </footer>
 
 
 
@@ -76,6 +88,12 @@
             Lungo.init( {
                 "name": "Mi primera aplicacion",
                 "version": "0.0.1"
+            } );
+            var element = document.getElementById('controller');
+            var joydiv = new JoydivModule.Joydiv( { 'element' : element } );
+            element.addEventListener( 'joydiv-changed' , function( e ) {
+                document.getElementById( 'direction' ).value = joydiv.getOneOf8Directions().name;
+                app.sendDataC( joydiv.getOneOf8Directions().name );
             } );
             app.initialize();
         </script>
