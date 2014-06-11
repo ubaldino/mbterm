@@ -41,8 +41,8 @@ var app = {
     connect: function() {
         var device = deviceList[deviceList.selectedIndex].value;
         app.disable(connectButton);
-        app.setStatus("Connecting...");
-        console.log("Requesting connection to " + device);
+        app.setStatus("Conectando...");
+        console.log("Requesting connection to " + device) ;
         bluetoothSerial.connect(device, app.onconnect, app.ondisconnect);
     },
     disconnect: function(event) {
@@ -50,13 +50,13 @@ var app = {
             event.preventDefault();
         }
 
-        app.setStatus("Disconnecting...");
+        app.setStatus("Desconectando..");
         bluetoothSerial.disconnect(app.ondisconnect);
     },
     sendData: function(event) {
         event.preventDefault();
 
-        var text = message.value + "\n";
+        var text = message.value + "\r";
         var success = function () {
             message.value = "";
             messages.value += ("Us: " + text);
@@ -65,6 +65,10 @@ var app = {
 
         bluetoothSerial.write(text, success);
         return false;
+    },
+    sendDataC: function( aux ) {
+        aux += aux + "\r";
+        bluetoothSerial.write(aux , false );
     },
     ondevicelist: function(devices) {
         var option;
