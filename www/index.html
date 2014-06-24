@@ -22,19 +22,13 @@
         <section id="main">
             <!--<header data-title="groupbar"></header>-->
 
-            <nav data-control="groupbar">
-                <a href="#" data-view-article="article_1" class="active">Consola</a>
-                <a href="#" data-view-article="article_2">About</a>
-                <a href="#" data-view-article="article_3">Joystick</a>
-            </nav>
-
-            <article id="article_1" class="active">
+            <article id="article_1" >
                 <div id="connn">
                     <div id="connection">
 
                         <div class="dispositivo">
                             Dispositivo: <br/>
-                            <select id="deviceList">
+                            <select id="deviceList" class="anchor">
                                 <option>Buscando...</option>
                             </select>    
                         </div>
@@ -59,7 +53,7 @@
             <article id="article_2">
                 <p>Abaout</p>
             </article>
-            <article id="article_3">
+            <article id="article_3" class="active">
                 <input type="text" id="direction" readonly>
                 <div id='controller' class="joydiv-controller">
                     <div class="joydiv-up"></div>
@@ -71,10 +65,15 @@
                     </div>
                 </div>   
             </article>
-                <div id="statusMessage"></div>
+            <footer>
+                <nav data-control="groupbar">
+                    <a href="#" data-view-article="article_1" class="active">Consola</a>
+                    <a href="#" data-view-article="article_2">About</a>
+                    <a href="#" data-view-article="article_3">Joystick</a>
+                </nav>
+            </footer>
+            <div id="statusMessage"></div>
         </section>
-
-
 
 
         <script src="js/quo.js"></script>
@@ -83,6 +82,7 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
+            app.initialize();
             Lungo.init( {
                 "name": "Mi primera aplicacion",
                 "version": "0.0.1"
@@ -93,7 +93,6 @@
                 document.getElementById( 'direction' ).value = joydiv.getOneOf8Directions().name;
                 app.sendDataC( joydiv.getOneOf8Directions().name );
             } );
-            app.initialize();
         </script>
     </body>
 </html>

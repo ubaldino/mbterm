@@ -73,7 +73,7 @@ var JoydivModule;
             this.arrows = this.map(arrowInfo, function (info, i) {
                 var arrow = querySelector(_this.rootElement, '.joydiv-' + info.name);
                 arrow.addEventListener('mousedown', function (e) {
-                    _this.addVote(info.direction, 'arrow-mouse-' + i);
+                    _this.addVote(info.direction, 'arrow-mouse-' + (i+30) );
                 }, false);
                 document.addEventListener('mouseup', function (e) {
                     _this.removeVote('arrow-mouse-' + i);

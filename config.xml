@@ -2,11 +2,16 @@
 <widget id="org.ubaldino.mbterm" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>MbTerm</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Mi terminal
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="ozzirisc@gmail.com" href="http://cordova.io">
+        ubaldino zurita
     </author>
     <content src="index.html" />
+    <preference name="orientation" value="landscape" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="KeyboardShrinksView" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
     <access origin="*" />
 </widget>

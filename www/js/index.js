@@ -56,19 +56,20 @@ var app = {
     sendData: function(event) {
         event.preventDefault();
 
-        var text = message.value + "\r";
+        var text = message.value + "\n";
         var success = function () {
             message.value = "";
             messages.value += ("Us: " + text);
             messages.scrollTop = messages.scrollHeight;
         };
 
-        bluetoothSerial.write(text, success);
+        bluetoothSerial.write(text, success );
         return false;
     },
     sendDataC: function( aux ) {
-        aux += aux + "\r";
-        bluetoothSerial.write(aux , false );
+        var text = aux + "\n";
+        bluetoothSerial.write( text , false );
+        return false;
     },
     ondevicelist: function(devices) {
         var option;
@@ -108,14 +109,14 @@ var app = {
         } else {
             app.enable(connectButton);
             listButton.style.display = "none";
-            app.setStatus("Found " + devices.length + " device" + (devices.length === 1 ? "." : "s."));
+            app.setStatus( devices.length + " dispositivo" + (devices.length === 1 ? "." : "s."));
         }
 
     },
     onconnect: function() {
         connection.style.display = "none";
         chat.style.display = "block";
-        app.setStatus("Connected");
+        app.setStatus("Conectado");
     },
     ondisconnect: function(reason) {
         var details = "";
@@ -125,7 +126,7 @@ var app = {
         connection.style.display = "block";
         app.enable(connectButton);
         chat.style.display = "none";
-        app.setStatus("Disconnected");
+        app.setStatus("Desconectado");
     },
     onmessage: function(message) {
         messages.value += "Them: " + message;
