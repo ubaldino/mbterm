@@ -22,7 +22,7 @@
         <section id="main">
             <!--<header data-title="groupbar"></header>-->
 
-            <article id="article_1" >
+            <article id="article_1">
                 <div id="connn">
                     <div id="connection">
 
@@ -50,10 +50,21 @@
                 </div>
             </article>
 
-            <article id="article_2">
-                <p>Abaout</p>
+            <article id="article_2" class="active">
+                <div>
+                    <h1>AndroAraña</h1>
+                    <ul>
+                        <li>Murillo Montaño Regina</li>
+                        <li>Peña Sahonero Erikc</li>
+                        <li>Perez Murillo Marcelo Wilson</li>
+                        <li>Rios Lara Rodrigo Fernando</li>
+                        <li>Terrazas Mercado Michel</li>
+                        <li>Vargas Arteaga Vanessa Alejandra</li>
+                    </ul>
+                </div>    
             </article>
-            <article id="article_3" class="active">
+
+            <article id="article_3">
                 <input type="text" id="direction" readonly>
                 <div id='controller' class="joydiv-controller">
                     <div class="joydiv-up"></div>
@@ -64,11 +75,15 @@
                         <div class="joydiv-tracker"></div>
                     </div>
                 </div>   
+                <button id="joydiv-n" >timido derecha</button>
+                <button id="joydiv-m" >timido izquierda</button>
+                <button id="joydiv-l" >zapateo</button>
+
             </article>
             <footer>
                 <nav data-control="groupbar">
-                    <a href="#" data-view-article="article_1" class="active">Consola</a>
-                    <a href="#" data-view-article="article_2">About</a>
+                    <a href="#" data-view-article="article_1" >Consola</a>
+                    <a href="#" data-view-article="article_2" class="active">Acerca de</a>
                     <a href="#" data-view-article="article_3">Joystick</a>
                 </nav>
             </footer>
@@ -89,10 +104,27 @@
             } );
             var element = document.getElementById('controller');
             var joydiv = new JoydivModule.Joydiv( { 'element' : element } );
+            
             element.addEventListener( 'joydiv-changed' , function( e ) {
                 document.getElementById( 'direction' ).value = joydiv.getOneOf8Directions().name;
                 app.sendDataC( joydiv.getOneOf8Directions().name );
-            } );
+            });
+
+            var jn = document.getElementById('joydiv-n');
+            jn.addEventListener( 'click' , function( e ) {
+                app.sendDataC( "n" );
+            } );   
+            
+            var jm = document.getElementById('joydiv-m');
+            jm.addEventListener( 'click' , function( e ) {
+                app.sendDataC( "m" );
+            } );   
+            
+            var jl = document.getElementById('joydiv-l');
+            jl.addEventListener( 'click' , function( e ) {
+                app.sendDataC( "l" );
+            } );            
+
         </script>
     </body>
 </html>

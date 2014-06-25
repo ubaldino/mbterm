@@ -55,20 +55,44 @@ var app = {
     },
     sendData: function(event) {
         event.preventDefault();
-
         var text = message.value + "\n";
+
+        if ( message.value == 'up' )
+            text = 'a';
+        if ( message.value == 'right' )
+            text = 'd';
+        if ( message.value == 'left' )
+            text = 'i';
+        if ( message.value == 'down' )
+            text = 'r';
+
+        alert( text );
         var success = function () {
             message.value = "";
             messages.value += ("Us: " + text);
             messages.scrollTop = messages.scrollHeight;
         };
 
-        bluetoothSerial.write(text, success );
+        bluetoothSerial.write( text , success );
         return false;
     },
     sendDataC: function( aux ) {
-        var text = aux + "\n";
-        bluetoothSerial.write( text , false );
+
+        if ( aux != "none") {
+
+            var text = aux;
+            if ( aux == 'up' )
+                text = "a\n";
+            if ( aux == 'right' )
+                text = "d\n";
+            if ( aux == 'left' )
+                text = "i\n";
+            if ( aux == 'down' )
+                text = "r\n";
+
+            bluetoothSerial.write( text , false );
+        };
+
         return false;
     },
     ondevicelist: function(devices) {

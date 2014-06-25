@@ -24,7 +24,7 @@ $color10 = #F12F02
     position absolute
     bottom 20%
     left 10%
-    .joydiv-up ,.joydiv-left, .joydiv-right, .joydiv-down
+    .joydiv-up ,.joydiv-left, .joydiv-right, .joydiv-down, .joydiv-n, .joydiv-m
         position absolute
         width 0
         height 0
@@ -32,7 +32,7 @@ $color10 = #F12F02
         border solid transparent
 
     .joydiv-up
-        top -25%
+        top -40%
         left 50%
         margin-left -40%
         border-bottom-color $color10
@@ -43,7 +43,7 @@ $color10 = #F12F02
 
     .joydiv-left
         left  -40%
-        top  50%
+        top  35%
         border-right-color  $color9
         border-top-width  .40em
         border-left-width  0
@@ -52,7 +52,7 @@ $color10 = #F12F02
         margin-top -25%
 
     .joydiv-right
-        right -10%
+        right -40%
         top 50%
         margin-top -40%
         border-left-color  $color9
@@ -62,7 +62,6 @@ $color10 = #F12F02
         border-bottom-width  .40em
 
     .joydiv-down
-        background red
         bottom -40%
         left 50%
         margin-left -40%
@@ -71,6 +70,7 @@ $color10 = #F12F02
         border-left-width  .40em
         border-right-width  .40em
         border-bottom-width  0
+
 
     .joydiv-trackpad
         position absolute
@@ -91,6 +91,61 @@ $color10 = #F12F02
             margin-left -.1em
             margin-top -.1em
             border-color $color7
+
+/*
+v-n" >timido derecha</button>
+                <button id="joydiv-m" >timido izquierda</button>
+                <button id="joydiv-l" >zapateo</button>
+*/
+#joydiv-n
+    position absolute
+    background $color2
+    bottom 10%
+    right 5%
+    font-size 25px
+    border-color $color2
+    padding 10px
+
+#joydiv-m
+    position absolute
+    background $color3
+    font-size 25px
+    padding 10px
+    bottom 10%
+    right 25%
+
+#joydiv-l
+    position absolute
+    font-size 25px
+    background $color4
+    padding 10px
+    bottom 10%
+    right 45%
+
+#article_2
+    background url( "../img/20140625_193907.jpg" ) no-repeat center center fixed
+    background-size: cover;
+    background-top
+    opacity 0.8
+    color $color9
+    font-size 20px
+    div
+        text-align center
+        h1
+            font-weight bold
+            font-size 3.5em
+            color $color10
+            padding 8px
+        ul
+            position absolute
+            left 25%
+            list-style none
+            text-align center
+            li
+                text-align left
+                line-height 2
+                font-size 1.4em
+                 
 
 
 .fadein

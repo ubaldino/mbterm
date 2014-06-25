@@ -11,7 +11,9 @@
 .joydiv-controller .joydiv-up,
 .joydiv-controller .joydiv-left,
 .joydiv-controller .joydiv-right,
-.joydiv-controller .joydiv-down {
+.joydiv-controller .joydiv-down,
+.joydiv-controller .joydiv-n,
+.joydiv-controller .joydiv-m {
   position: absolute;
   width: 0;
   height: 0;
@@ -19,7 +21,7 @@
   border: solid transparent;
 }
 .joydiv-controller .joydiv-up {
-  top: -25%;
+  top: -40%;
   left: 50%;
   margin-left: -40%;
   border-bottom-color: #f12f02;
@@ -30,7 +32,7 @@
 }
 .joydiv-controller .joydiv-left {
   left: -40%;
-  top: 50%;
+  top: 35%;
   border-right-color: #f3b802;
   border-top-width: 0.4em;
   border-left-width: 0;
@@ -39,7 +41,7 @@
   margin-top: -25%;
 }
 .joydiv-controller .joydiv-right {
-  right: -10%;
+  right: -40%;
   top: 50%;
   margin-top: -40%;
   border-left-color: #f3b802;
@@ -49,7 +51,6 @@
   border-bottom-width: 0.4em;
 }
 .joydiv-controller .joydiv-down {
-  background: #f00;
   bottom: -40%;
   left: 50%;
   margin-left: -40%;
@@ -80,6 +81,68 @@
   margin-left: -0.1em;
   margin-top: -0.1em;
   border-color: #0067c3;
+}
+/*
+v-n" >timido derecha</button>
+                <button id="joydiv-m" >timido izquierda</button>
+                <button id="joydiv-l" >zapateo</button>
+*/
+#joydiv-n {
+  position: absolute;
+  background: #11adb9;
+  bottom: 10%;
+  right: 5%;
+  font-size: 25px;
+  border-color: #11adb9;
+  padding: 10px;
+}
+#joydiv-m {
+  position: absolute;
+  background: #009865;
+  font-size: 25px;
+  padding: 10px;
+  bottom: 10%;
+  right: 25%;
+}
+#joydiv-l {
+  position: absolute;
+  font-size: 25px;
+  background: #f9ce47;
+  padding: 10px;
+  bottom: 10%;
+  right: 45%;
+}
+#article_2 {
+  background: url("../img/20140625_193907.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+background-top
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  color: #f3b802;
+  font-size: 20px;
+}
+#article_2 div {
+  text-align: center;
+}
+#article_2 div h1 {
+  font-weight: bold;
+  font-size: 3.5em;
+  color: #f12f02;
+  padding: 8px;
+}
+#article_2 div ul {
+  position: absolute;
+  left: 25%;
+  list-style: none;
+  text-align: center;
+}
+#article_2 div ul li {
+  text-align: left;
+  line-height: 2;
+  font-size: 1.4em;
 }
 .fadein {
   opacity: 1;
