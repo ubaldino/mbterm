@@ -65,11 +65,13 @@ var app = {
             text = 'i';
         if ( message.value == 'down' )
             text = 'r';
+        if ( message.value == 'none' ){
+            text = 's';
+        }
 
-        alert( text );
         var success = function () {
             message.value = "";
-            messages.value += ("Us: " + text);
+            messages.value += ( "User: " + text );
             messages.scrollTop = messages.scrollHeight;
         };
 
@@ -77,22 +79,20 @@ var app = {
         return false;
     },
     sendDataC: function( aux ) {
+        var text = aux;
+        if ( aux == 'up' )
+            text = "a";
+        if ( aux == 'right' )
+            text = "d";
+        if ( aux == 'left' )
+            text = "i";
+        if ( aux == 'down' )
+            text = "r";
+        if ( aux == 'none' ){
+            text = "s";
+        }
 
-        if ( aux != "none") {
-
-            var text = aux;
-            if ( aux == 'up' )
-                text = "a\n";
-            if ( aux == 'right' )
-                text = "d\n";
-            if ( aux == 'left' )
-                text = "i\n";
-            if ( aux == 'down' )
-                text = "r\n";
-
-            bluetoothSerial.write( text , false );
-        };
-
+        bluetoothSerial.write( text , false );
         return false;
     },
     ondevicelist: function(devices) {

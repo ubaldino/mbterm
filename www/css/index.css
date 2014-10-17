@@ -5,7 +5,7 @@
 }
 .joydiv-controller {
   position: absolute;
-  bottom: 20%;
+  bottom: 35%;
   left: 10%;
 }
 .joydiv-controller .joydiv-up,
@@ -113,7 +113,7 @@ v-n" >timido derecha</button>
   right: 45%;
 }
 #article_2 {
-  background: url("../img/20140625_193907.jpg") no-repeat center center fixed;
+  background: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -135,7 +135,8 @@ background-top
 }
 #article_2 div ul {
   position: absolute;
-  left: 25%;
+  top: 65%;
+  left: 35%;
   list-style: none;
   text-align: center;
 }

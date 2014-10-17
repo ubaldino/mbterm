@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="css/lungo.icon.brand.css">
         <link rel="stylesheet" href="css/lungo.theme.css">
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
-      <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css">
+        <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css">
  
     </head>
     <body>
@@ -22,7 +22,7 @@
         <section id="main">
             <!--<header data-title="groupbar"></header>-->
 
-            <article id="article_1">
+            <article id="article_1" >
                 <div id="connn">
                     <div id="connection">
 
@@ -50,21 +50,17 @@
                 </div>
             </article>
 
-            <article id="article_2" class="active">
+            <article id="article_2" >
                 <div>
-                    <h1>AndroAraña</h1>
+                    <h1>Exomars</h1>
                     <ul>
-                        <li>Murillo Montaño Regina</li>
-                        <li>Peña Sahonero Erikc</li>
-                        <li>Perez Murillo Marcelo Wilson</li>
-                        <li>Rios Lara Rodrigo Fernando</li>
-                        <li>Terrazas Mercado Michel</li>
-                        <li>Vargas Arteaga Vanessa Alejandra</li>
+                        <li>Ubaldino Zurita</li>
+                        <li>Rudy Rafael Ramirez Caero Gates</li>
                     </ul>
                 </div>    
             </article>
 
-            <article id="article_3">
+            <article id="article_3" class="active">
                 <input type="text" id="direction" readonly>
                 <div id='controller' class="joydiv-controller">
                     <div class="joydiv-up"></div>
@@ -74,17 +70,22 @@
                     <div class="joydiv-trackpad">
                         <div class="joydiv-tracker"></div>
                     </div>
-                </div>   
+                </div>
+                <br><br><br><br>
+                <button id="joydiv-l" >abrir</button>
+                <button id="joydiv-m" >cerrar</button>
+                <!--
                 <button id="joydiv-n" >timido derecha</button>
                 <button id="joydiv-m" >timido izquierda</button>
                 <button id="joydiv-l" >zapateo</button>
+                -->
 
             </article>
             <footer>
                 <nav data-control="groupbar">
-                    <a href="#" data-view-article="article_1" >Consola</a>
-                    <a href="#" data-view-article="article_2" class="active">Acerca de</a>
-                    <a href="#" data-view-article="article_3">Joystick</a>
+                    <a href="#" data-view-article="article_1" class="active">Consola</a>
+                    <a href="#" data-view-article="article_2" >Acerca de</a>
+                    <a href="#" data-view-article="article_3" >Joystick</a>
                 </nav>
             </footer>
             <div id="statusMessage"></div>
@@ -95,6 +96,7 @@
         <script src="js/lungo.js"></script>
         <script charset="UTF-8" src="js/joydiv.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
@@ -110,20 +112,16 @@
                 app.sendDataC( joydiv.getOneOf8Directions().name );
             });
 
-            var jn = document.getElementById('joydiv-n');
-            jn.addEventListener( 'click' , function( e ) {
-                app.sendDataC( "n" );
-            } );   
-            
-            var jm = document.getElementById('joydiv-m');
-            jm.addEventListener( 'click' , function( e ) {
-                app.sendDataC( "m" );
-            } );   
-            
-            var jl = document.getElementById('joydiv-l');
-            jl.addEventListener( 'click' , function( e ) {
-                app.sendDataC( "l" );
-            } );            
+            $(document).ready(function(){
+                $("#joydiv-l").bind('click',function(){
+                    app.sendDataC("o");
+                });
+                $("#joydiv-m").bind('click',function(){
+                    app.sendDataC("c");
+                });
+            });
+
+
 
         </script>
     </body>

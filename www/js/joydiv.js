@@ -25,7 +25,6 @@ var JoydivModule;
         ];
         return Direction;
     })();
-    
     JoydivModule.Direction = Direction;    
     var Joydiv = (function () {
         function Joydiv(options) {
@@ -73,7 +72,7 @@ var JoydivModule;
             this.arrows = this.map(arrowInfo, function (info, i) {
                 var arrow = querySelector(_this.rootElement, '.joydiv-' + info.name);
                 arrow.addEventListener('mousedown', function (e) {
-                    _this.addVote(info.direction, 'arrow-mouse-' + (i+30) );
+                    _this.addVote(info.direction, 'arrow-mouse-' + i);
                 }, false);
                 document.addEventListener('mouseup', function (e) {
                     _this.removeVote('arrow-mouse-' + i);
