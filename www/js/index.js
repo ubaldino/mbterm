@@ -53,6 +53,8 @@ var app = {
         app.setStatus("Desconectando..");
         bluetoothSerial.disconnect(app.ondisconnect);
     },
+
+    //funciona con la terminal
     sendData: function(event) {
         event.preventDefault();
         var text = message.value + "\n";
@@ -78,6 +80,8 @@ var app = {
         bluetoothSerial.write( text , success );
         return false;
     },
+
+    //funciona con el joystick
     sendDataC: function( aux ) {
         var text = aux;
         if ( aux == 'up' )
@@ -90,6 +94,10 @@ var app = {
             text = "r";
         if ( aux == 'none' ){
             text = "s";
+            bluetoothSerial.write( text , false );
+            bluetoothSerial.write( text , false );
+            bluetoothSerial.write( text , false );
+            bluetoothSerial.write( text , false );
         }
 
         bluetoothSerial.write( text , false );

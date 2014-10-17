@@ -3,10 +3,22 @@
   height: 150px;
   font-size: 150px;
 }
+#controller #bgcontroller {
+  position: relative;
+  background: rgba(0,68,34,0.91);
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  padding: 0.96em;
+  top: -45%;
+  left: -45%;
+  -webkit-border-radius: 50em;
+  border-radius: 50em;
+}
 .joydiv-controller {
   position: absolute;
   bottom: 35%;
-  left: 10%;
+  left: 15%;
 }
 .joydiv-controller .joydiv-up,
 .joydiv-controller .joydiv-left,
@@ -67,8 +79,8 @@
   top: 25%;
   bottom: 25%;
   background: #01be46;
-  -webkit-border-radius: 10%;
-  border-radius: 10%;
+  -webkit-border-radius: 20%;
+  border-radius: 20%;
 }
 .joydiv-controller .joydiv-trackpad .joydiv-tracker {
   position: absolute;
@@ -77,9 +89,9 @@
   -webkit-border-radius: 50%;
   border-radius: 50%;
   border-style: solid;
-  border-width: 0.1em;
-  margin-left: -0.1em;
-  margin-top: -0.1em;
+  border-width: 0.2em;
+  margin-left: -0.2em;
+  margin-top: -0.2em;
   border-color: #0067c3;
 }
 /*
@@ -90,37 +102,31 @@ v-n" >timido derecha</button>
 #joydiv-n {
   position: absolute;
   background: #11adb9;
-  bottom: 10%;
+  bottom: 45%;
   right: 5%;
   font-size: 25px;
   border-color: #11adb9;
-  padding: 10px;
+  padding: 0.6em 1.5em;
 }
 #joydiv-m {
   position: absolute;
   background: #009865;
   font-size: 25px;
-  padding: 10px;
-  bottom: 10%;
-  right: 25%;
+  padding: 0.6em 1.5em;
+  bottom: 42%;
+  right: 10%;
 }
 #joydiv-l {
   position: absolute;
   font-size: 25px;
   background: #f9ce47;
-  padding: 10px;
-  bottom: 10%;
-  right: 45%;
+  padding: 0.6em 1.5em;
+  bottom: 42%;
+  right: 30%;
 }
 #article_2 {
-  background: black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-background-top
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
+  position: relative;
+  background: #009865;
   color: #f3b802;
   font-size: 20px;
 }
@@ -136,14 +142,15 @@ background-top
 #article_2 div ul {
   position: absolute;
   top: 65%;
-  left: 35%;
-  list-style: none;
+  left: 28%;
   text-align: center;
+  list-style: none;
 }
 #article_2 div ul li {
-  text-align: left;
+  text-align: center;
   line-height: 2;
   font-size: 1.4em;
+  font-weight: bold;
 }
 .fadein {
   opacity: 1;

@@ -14,16 +14,38 @@ $color8 = #01BE46
 $color9 = #F3B802
 $color10 = #F12F02
 
- 
+$celeste = #1ea1c7ff
+$naranja = #ee9c1dff
+$plomo = #4c676fff
+$gris = #9ca2a9ff
+$colorfooter = rgba(78, 85, 88, 1)
+
+$ctwitter = rgba(128, 206, 240, 1)
+$cfacebook = rgba(92, 137, 206, 1)
+$cinstagram = rgba(0, 68, 34, .91 )
+$cgoogle = rgba( 223, 92, 86, 1)
+$cmarino = rgba(51, 81, 122, 1)
+$cazul = rgba(75, 120, 192, 1)
+$cvioleta = rgba(112, 40, 97, 1) 
+
+
+
 #controller
     width:150px;
     height:150px;
     font-size:150px;//font-size is used to determine the size of arrows
-
+    #bgcontroller
+        position relative
+        background: $cinstagram
+        opacity: 0.3
+        padding: 0.96em
+        top -45%
+        left -45%
+        border-radius: 50em
 .joydiv-controller
     position absolute
     bottom 35%
-    left 10%
+    left 15%
     .joydiv-up ,.joydiv-left, .joydiv-right, .joydiv-down, .joydiv-n, .joydiv-m
         position absolute
         width 0
@@ -79,7 +101,7 @@ $color10 = #F12F02
         top 25%
         bottom 25%
         background $color8
-        border-radius 10%
+        border-radius 20%
 
         .joydiv-tracker
             position absolute
@@ -87,9 +109,9 @@ $color10 = #F12F02
             left 50%
             border-radius 50%
             border-style solid
-            border-width .1em
-            margin-left -.1em
-            margin-top -.1em
+            border-width .2em
+            margin-left -.2em
+            margin-top -.2em
             border-color $color7
 
 /*
@@ -100,33 +122,31 @@ v-n" >timido derecha</button>
 #joydiv-n
     position absolute
     background $color2
-    bottom 10%
+    bottom 45%
     right 5%
     font-size 25px
     border-color $color2
-    padding 10px
+    padding 0.6em 1.5em
 
 #joydiv-m
     position absolute
     background $color3
     font-size 25px
-    padding 10px
-    bottom 10%
-    right 25%
+    padding 0.6em 1.5em
+    bottom 42%
+    right 10%
 
 #joydiv-l
     position absolute
     font-size 25px
     background $color4
-    padding 10px
-    bottom 10%
-    right 45%
+    padding 0.6em 1.5em
+    bottom 42%
+    right 30%
 
 #article_2
-    background url( "../img/20140625_193907.jpg" ) no-repeat center center fixed
-    background-size: cover;
-    background-top
-    opacity 0.8
+    position: relative
+    background $color3
     color $color9
     font-size 20px
     div
@@ -139,13 +159,14 @@ v-n" >timido derecha</button>
         ul
             position absolute
             top 65%
-            left 35%
-            list-style none
+            left 28%
             text-align center
+            list-style none
             li
-                text-align left
+                text-align center
                 line-height 2
                 font-size 1.4em
+                font-weight: bold
                  
 
 
