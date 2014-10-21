@@ -102,8 +102,8 @@ v-n" >timido derecha</button>
 #joydiv-n {
   position: absolute;
   background: #11adb9;
-  bottom: 45%;
-  right: 5%;
+  bottom: 42%;
+  right: 4%;
   font-size: 25px;
   border-color: #11adb9;
   padding: 0.6em 1.5em;
@@ -114,15 +114,15 @@ v-n" >timido derecha</button>
   font-size: 25px;
   padding: 0.6em 1.5em;
   bottom: 42%;
-  right: 10%;
+  right: 22%;
 }
 #joydiv-l {
   position: absolute;
   font-size: 25px;
   background: #f9ce47;
-  padding: 0.6em 1.5em;
+  padding: 0.6em 0.5em;
   bottom: 42%;
-  right: 30%;
+  right: 40%;
 }
 #article_2 {
   position: relative;

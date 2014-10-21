@@ -50,7 +50,7 @@
                 </div>
             </article>
 
-            <article id="article_2" class="active">
+            <article id="article_2" >
                 <div>
                     <h1>Control</h1>
                     <ul>
@@ -60,7 +60,7 @@
                 </div>    
             </article>
 
-            <article id="article_3" >
+            <article id="article_3" class="active">
                 <input type="text" id="direction" readonly>
                     <div id='controller' class="joydiv-controller">
                     <div id="bgcontroller"></div>
@@ -73,10 +73,10 @@
                         </div>
                     </div>
                 <br><br><br><br>
-                <button id="joydiv-l" >abrir</button>
-                <button id="joydiv-m" >cerrar</button>
+                <button id="joydiv-l" >Zapateo</button>
+                <button id="joydiv-m" >Izq.</button>
+                <button id="joydiv-n" >Der.</button>
                 <!--
-                <button id="joydiv-n" >timido derecha</button>
                 <button id="joydiv-m" >timido izquierda</button>
                 <button id="joydiv-l" >zapateo</button>
                 -->
@@ -97,7 +97,6 @@
         <script src="js/lungo.js"></script>
         <script charset="UTF-8" src="js/joydiv.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
@@ -105,6 +104,7 @@
                 "name": "Mi primera aplicacion",
                 "version": "0.0.1"
             } );
+
             var element = document.getElementById('controller');
             var joydiv = new JoydivModule.Joydiv( { 'element' : element } );
             
@@ -113,16 +113,58 @@
                 app.sendDataC( joydiv.getOneOf8Directions().name );
             });
 
-            $(document).ready(function(){
-                $("#joydiv-l").bind('click',function(){
-                    app.sendDataC("o");
-                });
-                $("#joydiv-m").bind('click',function(){
-                    app.sendDataC("c");
-                });
-            });
+            var joydiv_l = document.getElementById('joydiv-l');
 
+            joydiv_l.addEventListener('click', function() {
+                setTimeout(function() {
+                    app.sendDataC("l");
+                }, 30);
+                setTimeout(function() {
+                    app.sendDataC("l");
+                }, 30);
+                setTimeout(function() {
+                    app.sendDataC("l");
+                }, 30);
+                setTimeout(function() {
+                    app.sendDataC("l");
+                }, 30);
+            }, false);
 
+                
+            var joydiv_m = document.getElementById('joydiv-m');
+
+            joydiv_m.addEventListener('click', function() {
+                setTimeout(function() {
+                    app.sendDataC("m");
+                }, 30);
+                setTimeout(function() {
+                    app.sendDataC("m");
+                }, 30);
+                setTimeout(function() {
+                    app.sendDataC("m");
+                }, 30);
+                setTimeout(function() {
+                    app.sendDataC("m");
+                }, 30);
+            }, false);
+
+            var joydiv_n = document.getElementById('joydiv-n');
+
+            joydiv_n.addEventListener('click', function() {
+                alert("asadsadas");
+                setTimeout(function() {
+                    app.sendDataC("n");
+                }, 30);
+                setTimeout(function() {
+                    app.sendDataC("n");
+                }, 30);
+                setTimeout(function() {
+                    app.sendDataC("n");
+                }, 30);
+                setTimeout(function() {
+                    app.sendDataC("n");
+                }, 30);
+            }, false);
 
         </script>
     </body>

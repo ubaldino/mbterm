@@ -86,18 +86,26 @@ var app = {
         var text = aux;
         if ( aux == 'up' )
             text = "a";
-        if ( aux == 'right' )
+        else if ( aux == 'right' )
             text = "d";
-        if ( aux == 'left' )
+        else if ( aux == 'left' )
             text = "i";
-        if ( aux == 'down' )
+        else if ( aux == 'down' )
             text = "r";
-        if ( aux == 'none' ){
+        else if ( aux == 'none' ){
             text = "s";
-            bluetoothSerial.write( text , false );
-            bluetoothSerial.write( text , false );
-            bluetoothSerial.write( text , false );
-            bluetoothSerial.write( text , false );
+            setTimeout(function() {
+                bluetoothSerial.write( text , false );
+            }, 30);
+            setTimeout(function() {
+                bluetoothSerial.write( text , false );
+            }, 30);
+            setTimeout(function() {
+                bluetoothSerial.write( text , false );
+            }, 30);
+            setTimeout(function() {
+                bluetoothSerial.write( text , false );
+            }, 30);
         }
 
         bluetoothSerial.write( text , false );
