@@ -29,7 +29,199 @@ $cazul = rgba(75, 120, 192, 1)
 $cvioleta = rgba(112, 40, 97, 1) 
 
 
+#main
+    background: red
+    #article_1
+        background: yellow
+    #article_2
+        background: yellow
+    #article_3
+        center(99%)
+        #controller
+            col(1/2 , cycle: 2)
+            position absolute
+            bottom 35%
+            left 15%
+            width: 150px;
+            height: 150px;
+            font-size: 150px;//font-size is used to determine the size of arrows
 
+            #bgcontroller
+                position relative
+                background: $cinstagram
+                opacity: 0.3
+                padding: 0.96em
+                bottom:  48%
+                left -45%
+                border-radius: 50em
+            +below( 480px )
+                width:100px;
+                height:100px;
+                font-size:90px;//font-size is used to determine the size of arrows
+                bottom: 1em
+
+            .joydiv-up ,.joydiv-left, .joydiv-right, .joydiv-down, .joydiv-n, .joydiv-m
+                position absolute
+                width 0
+                height 0
+                background  transparent
+                border solid transparent
+
+            .joydiv-up
+                top -40%
+                left 50%
+                margin-left -40%
+                border-bottom-color $color10
+                border-top-width 0
+                border-left-width .40em
+                border-right-width .40em
+                border-bottom-width .45em
+
+            .joydiv-left
+                left  -40%
+                top  35%
+                border-right-color  $color9
+                border-top-width  .40em
+                border-left-width  0
+                border-right-width  .45em
+                border-bottom-width  .40em
+                margin-top -25%
+
+            .joydiv-right
+                right -40%
+                top 50%
+                margin-top -40%
+                border-left-color  $color9
+                border-top-width  .40em
+                border-left-width  .45em
+                border-right-width  0
+                border-bottom-width  .40em
+
+            .joydiv-down
+                bottom -40%
+                left 50%
+                margin-left -40%
+                border-top-color  $color10
+                border-top-width  .45em
+                border-left-width  .40em
+                border-right-width  .40em
+                border-bottom-width  0
+
+
+            .joydiv-trackpad
+                position absolute
+                left 25%
+                right 25%
+                top 25%
+                bottom 25%
+                background $color8
+                border-radius 20%
+
+                .joydiv-tracker
+                    position absolute
+                    top 50%
+                    left 50%
+                    border-radius 50%
+                    border-style solid
+                    border-width .2em
+                    margin-left -.2em
+                    margin-top -.2em
+                    border-color $color7
+
+
+        #controller2
+            col(1/2 , cycle: 2)
+            position absolute
+            bottom 35%
+            right 15%
+            color: $color6
+            width: 150px;
+            height: 150px;
+            font-size: 150px;//font-size is used to determine the size of arrows
+
+            #bgcontroller2
+                position relative
+                background: $cinstagram
+                opacity: 0.3
+                padding: 0.96em
+                bottom: 47%
+                left -46%
+                border-radius: 50em
+            +below( 480px )
+                width:100px;
+                height:100px;
+                font-size:90px;//font-size is used to determine the size of arrows
+                bottom: 1em
+
+            .joydiv-up ,.joydiv-left, .joydiv-right, .joydiv-down, .joydiv-n, .joydiv-m
+                position absolute
+                width 0
+                height 0
+                background  transparent
+                border solid transparent
+
+            .joydiv-up
+                top -40%
+                left 50%
+                margin-left -40%
+                border-bottom-color $color10
+                border-top-width 0
+                border-left-width .40em
+                border-right-width .40em
+                border-bottom-width .45em
+
+            .joydiv-left
+                left  -40%
+                top  35%
+                border-right-color  $color9
+                border-top-width  .40em
+                border-left-width  0
+                border-right-width  .45em
+                border-bottom-width  .40em
+                margin-top -25%
+
+            .joydiv-right
+                right -40%
+                top 50%
+                margin-top -40%
+                border-left-color  $color9
+                border-top-width  .40em
+                border-left-width  .45em
+                border-right-width  0
+                border-bottom-width  .40em
+
+            .joydiv-down
+                bottom -40%
+                left 50%
+                margin-left -40%
+                border-top-color  $color10
+                border-top-width  .45em
+                border-left-width  .40em
+                border-right-width  .40em
+                border-bottom-width  0
+
+
+            .joydiv-trackpad
+                position absolute
+                left 25%
+                right 25%
+                top 25%
+                bottom 25%
+                background $color8
+                border-radius 20%
+
+                .joydiv-tracker
+                    position absolute
+                    top 50%
+                    left 50%
+                    border-radius 50%
+                    border-style solid
+                    border-width .2em
+                    margin-left -.2em
+                    margin-top -.2em
+                    border-color $color7
+
+/*
 #controller
     width:150px;
     height:150px;
@@ -42,6 +234,11 @@ $cvioleta = rgba(112, 40, 97, 1)
         top -45%
         left -45%
         border-radius: 50em
+    +below( 480px )
+        width:100px;
+        height:100px;
+        font-size:90px;//font-size is used to determine the size of arrows
+        bottom: 1em
 .joydiv-controller
     position absolute
     bottom 35%
@@ -114,11 +311,7 @@ $cvioleta = rgba(112, 40, 97, 1)
             margin-top -.2em
             border-color $color7
 
-/*
-v-n" >timido derecha</button>
-                <button id="joydiv-m" >timido izquierda</button>
-                <button id="joydiv-l" >zapateo</button>
-*/
+
 #joydiv-n
     position absolute
     background $color2
@@ -127,6 +320,9 @@ v-n" >timido derecha</button>
     font-size 25px
     border-color $color2
     padding 0.6em 1.5em
+    +below( 480px )
+        font-size 15px
+        padding 0.6em 1.1em
 
 #joydiv-m
     position absolute
@@ -135,6 +331,9 @@ v-n" >timido derecha</button>
     padding 0.6em 1.5em
     bottom 42%
     right 22%
+    +below( 480px )
+        font-size 15px
+        padding 0.6em 1.1em
 
 #joydiv-l
     position absolute
@@ -143,6 +342,9 @@ v-n" >timido derecha</button>
     padding 0.6em 0.5em
     bottom 42%
     right 40%
+    +below( 480px )
+        font-size 15px
+        padding 0.6em 1.1em
 
 #article_2
     position: relative
@@ -168,6 +370,7 @@ v-n" >timido derecha</button>
                 font-size 1.4em
                 font-weight: bold
                  
+*/
 
 
 .fadein

@@ -83,32 +83,25 @@ var app = {
 
     //funciona con el joystick
     sendDataC: function( aux ) {
-        var text = aux;
-        if ( aux == 'up' )
-            text = "a";
-        else if ( aux == 'right' )
-            text = "d";
-        else if ( aux == 'left' )
-            text = "i";
-        else if ( aux == 'down' )
-            text = "r";
-        else if ( aux == 'none' ){
-            text = "s";
+
+        if ( aux == 'none' ){
             setTimeout(function() {
-                bluetoothSerial.write( text , false );
+                bluetoothSerial.write( "s" , false );
             }, 30);
             setTimeout(function() {
-                bluetoothSerial.write( text , false );
+                bluetoothSerial.write( "s" , false );
             }, 30);
             setTimeout(function() {
-                bluetoothSerial.write( text , false );
+                bluetoothSerial.write( "s" , false );
             }, 30);
             setTimeout(function() {
-                bluetoothSerial.write( text , false );
+                bluetoothSerial.write( "s" , false );
             }, 30);
         }
+        else{
+            bluetoothSerial.write( aux , false );
+        }
 
-        bluetoothSerial.write( text , false );
         return false;
     },
     ondevicelist: function(devices) {

@@ -61,9 +61,22 @@
             </article>
 
             <article id="article_3" class="active">
-                <input type="text" id="direction" readonly>
+
                     <div id='controller' class="joydiv-controller">
-                    <div id="bgcontroller"></div>
+                        <div id="bgcontroller"></div>
+                        
+                        <div class="joydiv-up"></div>
+                        <div class="joydiv-left"></div>
+                        <div class="joydiv-right"></div>
+                        <div class="joydiv-down"></div>
+                        
+                        <div class="joydiv-trackpad">
+                            <div class="joydiv-tracker"></div>
+                        </div>
+                    </div>
+ 
+                    <div id='controller2' class="joydiv-controller">
+                        <div id="bgcontroller2"></div>
                         <div class="joydiv-up"></div>
                         <div class="joydiv-left"></div>
                         <div class="joydiv-right"></div>
@@ -72,14 +85,10 @@
                             <div class="joydiv-tracker"></div>
                         </div>
                     </div>
-                <br><br><br><br>
-                <button id="joydiv-l" >Zapateo</button>
-                <button id="joydiv-m" >Izq.</button>
-                <button id="joydiv-n" >Der.</button>
-                <!--
-                <button id="joydiv-m" >timido izquierda</button>
-                <button id="joydiv-l" >zapateo</button>
-                -->
+
+                <input type="text" id="direction" readonly>
+
+
 
             </article>
             <footer>
@@ -108,10 +117,71 @@
             var element = document.getElementById('controller');
             var joydiv = new JoydivModule.Joydiv( { 'element' : element } );
             
+            // conduccion
+
             element.addEventListener( 'joydiv-changed' , function( e ) {
                 document.getElementById( 'direction' ).value = joydiv.getOneOf8Directions().name;
-                app.sendDataC( joydiv.getOneOf8Directions().name );
+                
+                aux = joydiv.getOneOf8Directions().name ;
+                
+                if ( aux == 'up' )
+                    aux = "a4";
+                else if ( aux == 'right' )
+                    aux = "d4";
+                else if ( aux == 'left' )
+                    aux = "i4";
+                else if ( aux == 'down' )
+                    aux = "r4";
+                else if ( aux == 'up-right' )
+                    aux = "E4";
+                else if ( aux == 'down-right' )
+                    aux = "D4";
+                else if ( aux == 'down-left' )
+                    aux = "I4";
+                else if ( aux == 'up-left' )
+                    aux = "H4";
+
+                app.sendDataC( aux );
             });
+
+            // mando
+
+            var element2 = document.getElementById('controller2');
+            var joydiv2 = new JoydivModule.Joydiv( { 'element' : element2 } );
+            
+            element2.addEventListener( 'joydiv-changed' , function( e ) {
+                document.getElementById( 'direction' ).value = joydiv2.getOneOf8Directions().name;
+               
+                aux = joydiv2.getOneOf8Directions().name ;
+              
+
+                if ( aux == 'up' )
+                    aux = "J";
+                else if ( aux == 'right' )
+                    aux = "M";
+                else if ( aux == 'left' )
+                    aux = "L";
+                else if ( aux == 'down' )
+                    aux = "K";
+                /*
+                else if ( aux == 'up-right' )
+                    aux = "E4";
+                else if ( aux == 'down-right' )
+                    aux = "D4";
+                else if ( aux == 'down-left' )
+                    aux = "I4";
+                else if ( aux == 'up-left' )
+                    aux = "H4";
+                */
+                app.sendDataC( aux );
+
+
+
+            });
+
+
+
+            /*
 
             var joydiv_l = document.getElementById('joydiv-l');
 
@@ -151,7 +221,6 @@
             var joydiv_n = document.getElementById('joydiv-n');
 
             joydiv_n.addEventListener('click', function() {
-                alert("asadsadas");
                 setTimeout(function() {
                     app.sendDataC("n");
                 }, 30);
@@ -165,6 +234,7 @@
                     app.sendDataC("n");
                 }, 30);
             }, false);
+            */
         </script>
     </body>
 </html>
